@@ -1,26 +1,44 @@
 // Write your solution in this file!
-const employee={
-    address:{
-        Mark:"2345 Ngong",
-        Jane:"5839 Town",
-        Josh:"9998 Kilimani"
-    }
+const employee ={
+    name: "Mark Maina" ,
+    streetAddress: "125 street",
+};
+
+function updateEmployeeWithKeyAndValue(employee, key, value ){
+    const updatedEmployee = { ...employee };
+
+    updatedEmployee[key] = value;
+
+
+   return updatedEmployee;
+
 }
 
-employee.address.Josh="777 Minsk"
+function destructivelyUpdateEmployeeWithKeyAndValue(employee, key, value){
+    employee[key] = value ;
+    return employee;
+
+}
 
 
-console.log(employee.address.Josh)
+function  deleteFromEmployeeByKey(employee , key){
+    const updatedEmployee = { ...employee };
 
-delete employee.address.Jane;
-
-
-console.log(employee)
+    delete updatedEmployee[key];
 
 
+    return updatedEmployee;
+}
+
+function destructivelyDeleteFromEmployeeByKey(employee , key){
+
+    delete employee[key];
+
+    return employee;
 
 
 
+}
 
 
 
